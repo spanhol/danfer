@@ -1,0 +1,19 @@
+<%= bootstrap_form_for(@quarto) do |f| %>
+  <% if @quarto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quarto.errors.count, "error") %> prohibited this quarto from being saved:</h2>
+
+      <ul>
+      <% @quarto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.number_field :numero_quarto %>
+    <%= f.number_field :andar %>
+    <%= f.number_field :categoria_quarto_id %>
+    <%= f.submit %>
+  </div>
+<% end %>

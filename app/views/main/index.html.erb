@@ -1,0 +1,45 @@
+<% if user_signed_in? %>
+
+
+<script language="javascript">
+	document.getElementById("titulo_aplicacao").innerHTML = "Quartos";
+</script>
+
+<table>
+	<thead>
+		<tr>
+			<th>Quarto</th>
+			<th>Categoria</th>	
+			<th>Situacão</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+	<% @quarto.each do |quarto| %>
+	<tr class="<%= quarto.getsitaucao %>">
+		<td><a href='/quarto/<%= quarto.id %>'><%= quarto.numero_quarto %></td>
+		<td><%= @categoria_quarto.find(quarto.categoria_quarto_id).descricao %></td>
+		<td><%= quarto.getsitaucao %></td>
+		<% if quarto.getsitaucao == 'Livre' %>
+			<td><%= link_to 'Checkin', '/quarto/new.html', class: 'btn' %></td>
+			<td><%= link_to 'Reverva', '/reserva/new.html?numero_quarto=' + quarto.numero_quarto.to_s + '' %></td>
+		<% end %>
+		<% if quarto.getsitaucao == 'Reservado' %>
+			<td><%= link_to 'Editar reserva', '/reserva/' + quarto.getreserva + '/edit' %></td>	
+			<td></td>		
+		<% end %>
+		<% if quarto.getsitaucao == 'Ocupado' %>
+			<td><%= link_to 'Checkout', '/quarto/new' %></td>
+			<td><%= link_to 'Renovacao', '/quarto/new' %></td>
+		<% end %>
+	</tr>
+	<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<% end %>
+

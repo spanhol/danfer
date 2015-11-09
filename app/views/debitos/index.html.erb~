@@ -1,0 +1,10 @@
+<h1>Saldo</h1>
+
+
+<% calcular(@estadia) %>
+<%if @saldo_atual.present? %>
+	<%= @saldo_atual %> Reais
+<% end %>
+<%if @saldo_atual.present? %>
+	<%= @saldo_total %> Reais
+<% end %>

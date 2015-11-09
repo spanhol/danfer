@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Danfer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    '/stylesheets/login.scss' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+<div class="container">
+	<div id="login-form">
+	<h3 class="img"><img alt="Logo" src="img/logo200branco.png"></h3>
+		<fieldset>
+		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			<p>
+			<%= f.label :email%>
+			<%= f.email_field :email, autofocus: true  %>
+			</p>
+			<p>		
+			<%= f.label :senha %>  
+		    <%= f.password_field :password, autocomplete: "off" %>
+			</p>
+			<div class="actions">
+		    <%= f.submit "Login" %>
+
+			<footer class="clearfix left" style="color: #000">
+			<p>
+				<% if devise_mapping.rememberable? -%>
+				<%= f.check_box :remember_me %>
+				<label class="forremember" for="remember_me">Continuar conectado</label>
+				<% end %>
+			</p>
+			<p>
+				<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+				<% end %>
+				<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+				<% end %>
+			</p>
+	</footer>
+
+  </div>
+<% end %>
+		</fieldset>
+	</div> <!-- end login-form -->
+<%= render "devise/shared/links" %>
+
+</div>
+
+
+</body>
+</html>

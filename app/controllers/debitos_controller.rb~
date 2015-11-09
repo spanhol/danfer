@@ -1,0 +1,16 @@
+class DebitosController < ApplicationController
+	
+	def calcular
+		if params[:id_estadia].present?
+			@estadia = params[:id_estadia]
+		else
+			@estadia = 0
+		end
+	end
+
+	def fechar
+	end
+
+	def renovar
+	end
+end

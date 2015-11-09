@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data inicial:</strong>
+  <%= @reserva.data_inicial %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @reserva.cpf %>
+</p>
+
+<p>
+  <strong>Numero quarto:</strong>
+  <%= @reserva.numero_quarto %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @reserva.data_final %>
+</p>
+
+<%= link_to 'Edit', edit_reserva_path(@reserva) %> |
+<%= link_to 'Back', reserva_index_path %>

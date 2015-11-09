@@ -1,0 +1,6 @@
+class Pagamento < ActiveRecord::Base
+
+	def quitar (estadia)
+		@pagamento = Pagamento.where(["id_estadia = ?", estadia]).first
+	end
+end

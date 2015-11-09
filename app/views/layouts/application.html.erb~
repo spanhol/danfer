@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Danfer</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+	
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+	
+</head>
+<body>
+
+<div class="div-nav-side-menu no_print">
+	<div class="nav-side-menu">
+		<div class="brand"><a href="/"><img class="logo" alt="Logo" src="/img/logo200branco.png"></a></div>
+		<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+		<div class="menu-list ">
+			<ul id="menu-content" class="menu-content collapse out">
+				<li id="home">
+					<a href="/">
+						<p class="linkwrapper">
+							<i class="fa fa-home fa-lg"></i> Home
+						</p>
+					</a>
+				</li>
+				<li id="checkin" href="/checkin">
+					<a href="/checkin">
+						<p class="linkwrapper">
+							<i class="fa fa-user fa-lg"></i> Check-in
+						</p>
+					</a>
+				</li>
+				<li id="checkout" href="/checkout">
+					<a href="/checkout">
+						<p class="linkwrapper">
+							<i class="fa fa-user fa-lg"></i> Check-out
+						</p>
+					</a>
+				</li>
+				<li id="estadias" href="/estadia">
+					<a href="/estadia">
+						<p class="linkwrapper">
+							<i class="fa fa-bed  fa-lg"></i> Estadias
+						</p>
+					</a>
+				</li>
+
+				<li id="reservas" data-toggle="collapse" data-target="#reservas-submenu" class="collapsed">
+					<a href="#"><i class="fa fa-calendar fa-lg"></i> Reservas <span class="arrow"></span></a>
+				</li>  
+				<ul id="reservas-submenu" class="sub-menu collapse">
+					<li id="reserva" onclick="location.href='/reserva'">						
+						Reservas	
+					</li>
+					<li id="reservanew" onclick="location.href='/reserva/new'">						
+						Nova reserva
+					</li>
+				</ul>
+				<li id="hospedes" data-toggle="collapse" data-target="#hospedes-submenu" class="collapsed">
+					<a href="#"><i class="fa fa-users fa-lg"></i> Hospedes <span class="arrow"></span></a>
+				</li>
+				<ul id="hospedes-submenu" class="sub-menu collapse">
+					<li id="hospede" onclick="location.href='/hospedes'">						
+						Cadastro de hospedes			
+					</li>
+					<li id="hospedesnew" onclick="location.href='/hospedes/new'">						
+						Novo cadastro
+					</li>
+				</ul>
+				<li id="usuarios" data-toggle="collapse" data-target="#usuarios-submenu" class="collapsed">
+					<a href="#"><i class="fa fa-users fa-lg"></i> Usuários <span class="arrow"></span></a>
+				</li>
+				<ul id="usuarios-submenu" class="sub-menu collapse">
+					<li id="users" onclick="location.href='/users'">						
+						Lista de usuários			
+					</li>
+					<li id="novousuario" onclick="location.href='/user/create'">						
+						Novo Usuário
+					</li>
+				</ul>
+				<li id="logout" >
+					<a href="/users/sign_out" data-method="delete">
+						<p class="linkwrapper">
+							<i class="fa fa-sign-out fa-lg"></i> Sair
+						</p>
+					</a>
+				</li>
+			</div>
+		</div>
+	</div>
+<script language="javascript">
+	document.getElementById("home").classList.remove('active');
+	document.getElementById("usuarios").classList.remove('active');
+	document.getElementById("estadias").classList.remove('active');
+	document.getElementById("checkin").classList.remove('active');
+	document.getElementById("checkout").classList.remove('active');
+	document.getElementById("reservas").classList.remove('active');
+	document.getElementById("hospedes").classList.remove('active');
+	document.getElementById("hospedesnew").classList.remove('active');
+
+</script>
+
+
+<div class="panel panel-default">
+	<div class="barra_titulo panel-heading">
+		<p class="navbar-text pull-right">
+			<strong><%= current_user.email %></strong>.
+			<%= link_to 'Meu perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+			<%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+			<h2 id="titulo_aplicacao"></h2>
+		</p>
+	</div>
+</div>
+	<div class="panel-body conteudo">
+
+<%= yield %>
+
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<h1>Saldo</h1>
+
+<% calcular(@idestadia) %>
+
+<%if @saldo_atual.present? %>
+	<%= @saldo_atual %> Reais
+<% end %>
+<%if @saldo_atual.present? %>
+	<%= @saldo_total %> Reais
+<% end %>
+
+<% if @saldo_atual <= 0 %>
+<%= link_to 'Renovar', debitos_renovar_path + '?id_estadia=' + @idestadia %>
+<%= link_to 'Fechar', debitos_fechar_path + '?id_estadia=' + @idestadia %>
+<% end %>
+<%= link_to 'Pagar', new_pagamento_path + '?id_estadia=' + @idestadia %>
+

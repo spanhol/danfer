@@ -1,0 +1,7 @@
+class User < ActiveRecord::Base
+  validates :senha, length: { minimum: 3 }, if: -> { new_record? || changes["senha"] }
+  validates :senha, confirmation: true, if: -> { new_record? || changes["senha"] }
+  validates :senha_confirmacao, presence: true, if: -> { new_record? || changes["senha"] }
+
+  validates :login, uniqueness: true
+end

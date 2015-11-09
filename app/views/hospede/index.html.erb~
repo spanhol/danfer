@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Hospede</h1>
+<script language="javascript">
+	document.getElementById("titulo_aplicacao").innerHTML = "Hospedes";
+</script>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpf</th>
+      <th>Nome</th>
+      <th>Placa</th>
+      <th>Nascimento</th>
+      <th>Rg</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospede.each do |hospede| %>
+      <tr>
+        <td><%= hospede.cpf %></td>
+        <td><%= hospede.nome %></td>
+        <td><%= hospede.placa %></td>
+        <td><%= hospede.nascimento %></td>
+        <td><%= hospede.rg %></td>
+        <td><%= link_to 'Show', hospede %></td>
+        <td><%= link_to 'Edit', edit_hospede_path(hospede) %></td>
+        <td><%= link_to 'Destroy', hospede, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hospede', new_hospede_path %>

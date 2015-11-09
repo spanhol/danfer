@@ -1,0 +1,282 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.left {
+	float: left;
+}
+.right{
+	float: right;
+}
+
+.img {
+	padding: 21px 0 21px 0;
+}
+
+body {
+//	background-color: #181717;
+	background-color: #ddd;
+	color: #000;
+//	font: 400 14px/1.5em sans-serif;
+	font: 400 14px/1.5em
+}
+
+.container {
+	margin: 0 auto;
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.conteudo {
+	margin: 0 0 0 300px;
+	position: relative;
+
+}
+.conteudo-padding {
+	padding: 20px 0 0 20px;
+	position: relative;
+}
+
+.barra_titulo h3{
+	margin: 0;
+}
+.barra_titulo{
+	margin: 0 0 0 300px;
+	padding: 10px 0 0 20px;
+	position: relative;
+	/*background-color: #23282e;*/
+	height: 50px;
+	display: block;
+}
+
+/*.select {
+	padding: 5px 10px 5px 10px;
+}*/
+
+a:hover {
+/*	color: #1dabb8;*/
+	color: #CB4B31;
+}
+
+fieldset {
+	border: none;
+	margin: 0;
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	-webkit-appearance: none;
+}
+
+input:focus {
+	outline: none;
+}
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:before, .clearfix:after {
+	content: ' ';
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+
+/*.container {
+	left: 50%;
+	position: fixed;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}*/
+
+/* ---------- LOGIN-FORM ---------- */
+#login-form {
+	width: 350px;
+}
+
+#login-form h3 {
+	background-color: #282830;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 14px;
+	padding: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+#login-form fieldset {
+	background: #fff;
+	border-radius: 0 0 5px 5px;
+	padding: 20px;
+	position: relative;
+}
+
+#login-form fieldset:before {
+	background-color: #fff;
+	content: "";
+	height: 8px;
+	left: 50%;
+	margin: -4px 0 0 -4px;
+	position: absolute;
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	width: 8px;
+}
+
+#login-form input {
+	font-size: 14px;
+}
+
+.forremember{
+	vertical-align: top;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 20px 0 0;
+	text-align: center;
+}
+
+#login-form input[type="checkbox"] {
+	display: inline;
+	width: 18px;
+	height: 18px;
+	outline: none;
+	border: 1px solid #999;
+	margin: 0  10px 0 0;
+	background: #fff;
+	/*border: 1px solid #dcdcdc;*/
+	-webkit-appearance: checkbox;
+}
+
+#login-form input[type="text"],
+#login-form input[type="email"],
+#login-form input[type="password"] {
+	border: 1px solid #dcdcdc;
+	padding: 12px 10px;
+	width: 238px;
+}
+
+
+#login-form input[type="text"] {
+	border-radius: 3px 3px 3px 3px;
+}
+
+#login-form input[type="email"] {
+	border-radius: 3px 3px 3px 3px;
+}
+
+#login-form input[type="password"] {
+	border-radius: 3px 3px 3px 3px;
+}
+
+#login-form button[type="submit"],
+#login-form input[type="submit"] {
+	background: #CB4B31;
+	/*#a2180e;*/
+	border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+}
+
+#login-form button[type="submit"]:hover,
+#login-form input[type="submit"]:hover {
+	background: #CB4B31;
+}
+
+footer a{
+		color: #009;
+		text-decoration: none;
+}
+
+#login-form footer {
+	font-size: 12px;
+	margin-top: 16px;
+	color: #000;
+}
+
+.info {
+	background: #e5e5e5;
+	border-radius: 50%;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 12px 0 -1px;
+	text-align: center;
+	width: 20px;
+}
+
+.linkwrapper {
+	margin: 0;
+}
+
+@media (max-width: 767px) {
+	.barra_titulo{
+		margin: 0 auto;
+		padding: 10px 0 0 20px;
+		width: 100%;
+		position: relative;
+		/*background-color: #23282e;*/
+		height: 40px;
+		font: 400 12px/1.5em sans-serif;
+		display: block;
+		float: left;
+	}
+	.conteudo {
+		padding: 0;
+		width: 100%;
+		float: left;
+		margin: 0 auto;
+		position: relative;
+	}
+	.hideonsmall {
+		display: none;
+	}
+}
+@media (min-width: 767px) {
+	.nav-side-menu .menu-list .menu-content {
+		display: block;
+	}
+}
+
+@media print {
+	.no_print {
+		display: none;
+	}
+	
+	.barra_titulo{
+		margin: 0 auto;
+		padding: 10px 0 20px 20px;
+		width: 100%;
+		position: relative;
+		/*background-color: #23282e;*/
+		font: 400 12px/1.5em sans-serif;
+		display: block;
+		float: left;
+	}
+	.conteudo {
+		padding: 0;
+		width: 100%;
+		float: left;
+		margin: 0 auto;
+		position: relative;
+	}
+}

@@ -1,0 +1,9 @@
+class MainController < ApplicationController
+
+	def index
+		@quarto = Quarto.all
+		@categoria_quarto = CategoriaQuarto.all
+		
+		@estadia = Estadia.all
+	end
+end

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @estadia.cpf %>
+</p>
+
+<p>
+  <strong>Numero quarto:</strong>
+  <%= @estadia.numero_quarto %>
+</p>
+
+<p>
+  <strong>Categoria quarto:</strong>
+  <%= @estadia.categoria_quarto_id %>
+</p>
+
+<p>
+  <strong>Data inicial:</strong>
+  <%= @estadia.data_inicial %>
+</p>
+
+<p>
+  <strong>Data final:</strong>
+  <%= @estadia.data_final %>
+</p>
+
+<p>
+  <strong>Qtde pessoas:</strong>
+  <%= @estadia.qtde_pessoas %>
+</p>
+
+<p>
+  <strong>Valor diaria:</strong>
+  <%= @estadia.valor_diaria %>
+</p>
+
+<%= link_to 'Edit', edit_estadia_path(@estadia) %> |
+<%= link_to 'Back', estadia_index_path %>

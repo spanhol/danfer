@@ -1,0 +1,103 @@
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
+#
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# you'll amass, the slower it'll run and the greater likelihood for issues).
+#
+# It's strongly recommended that you check this file into your version control system.
+
+ActiveRecord::Schema.define(version: 20151018190608) do
+
+  create_table "categoria_quarto", force: :cascade do |t|
+    t.string   "descricao"
+    t.float    "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categorias_quartos", force: :cascade do |t|
+    t.float    "valor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "estadia", force: :cascade do |t|
+    t.string   "cpf"
+    t.integer  "numero_quarto"
+    t.integer  "categoria_quarto_id"
+    t.date     "data_inicial"
+    t.date     "data_final"
+    t.integer  "qtde_pessoas"
+    t.float    "valor_diaria"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "hospede", force: :cascade do |t|
+    t.string   "cpf"
+    t.string   "nome"
+    t.string   "placa"
+    t.date     "nascimento"
+    t.string   "rg"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hospedes", force: :cascade do |t|
+    t.string   "cpf"
+    t.string   "nome"
+    t.string   "placa"
+    t.date     "nascimento"
+    t.string   "rg"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pagamentos", force: :cascade do |t|
+    t.date     "data"
+    t.integer  "dias"
+    t.integer  "id_estadia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quarto", force: :cascade do |t|
+    t.integer  "numero_quarto"
+    t.integer  "andar"
+    t.integer  "categoria_quarto_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "quartos", force: :cascade do |t|
+    t.integer  "numero_quarto"
+    t.integer  "andar"
+    t.integer  "categoria_quarto_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "reserva", force: :cascade do |t|
+    t.date     "data_inicial"
+    t.string   "cpf"
+    t.integer  "numero_quarto"
+    t.date     "data_final"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "reservas", force: :cascade do |t|
+    t.date     "data_inicial"
+    t.string   "cpf"
+    t.integer  "numero_quarto"
+    t.date     "data_final"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+end

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @categoria_quarto.descricao %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @categoria_quarto.valor %>
+</p>
+
+<%= link_to 'Edit', edit_categoria_quarto_path(@categoria_quarto) %> |
+<%= link_to 'Back', categoria_quarto_index_path %>

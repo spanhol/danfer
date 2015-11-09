@@ -1,0 +1,2 @@
+module HospedeHelper
+end

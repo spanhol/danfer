@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Numero quarto:</strong>
+  <%= @quarto.numero_quarto %>
+</p>
+
+<p>
+  <strong>Andar:</strong>
+  <%= @quarto.andar %>
+</p>
+
+<p>
+  <strong>Categoria quarto:</strong>
+  <%= @quarto.categoria_quarto_id %>
+</p>
+
+<%= link_to 'Edit', edit_quarto_path(@quarto) %> |
+<%= link_to 'Back', quarto_index_path %>

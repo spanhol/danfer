@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2015-10-18
+  dias: 1
+  id_estadia: 1
+
+two:
+  data: 2015-10-18
+  dias: 1
+  id_estadia: 1

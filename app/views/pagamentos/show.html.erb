@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @pagamento.data %>
+</p>
+
+<p>
+  <strong>Dias:</strong>
+  <%= @pagamento.dias %>
+</p>
+
+<p>
+  <strong>Id estadia:</strong>
+  <%= @pagamento.id_estadia %>
+</p>
+
+<%= link_to 'Edit', edit_pagamento_path(@pagamento) %> |
+<%= link_to 'Back', pagamentos_path %>
